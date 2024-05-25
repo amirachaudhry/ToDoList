@@ -4,13 +4,13 @@ import TodoList from "./TodoList";
 import React, { useState } from 'react';
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTasks] = useState([]);
   const[newTodo, setNewTodo] = useState("");
 
   const handleTasks = () => {
     // does exist
     if (newTodo.trim() != "") {
-      setTodos([...todos, {text: newTodo.trim(), checked: false}]);
+      setTasks([...todos, {text: newTodo.trim(), checked: false}]);
       setNewTodo("");
 
     }
@@ -19,13 +19,13 @@ const App = () => {
   const handleDelete = (index) => {
     const newTodos = [...todos];
     newTodos.splice(index,1);
-    setTodos(newTodos);
+    setTasks(newTodos);
   }
 
   const handleToggle = (index) => {
     const newTodos = [...todos];
     newTodos[index].checked = !newTodos[index].checked;
-    setTodos(newTodos);
+    setTasks(newTodos);
 
     
   };
