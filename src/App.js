@@ -23,6 +23,9 @@ const App = () => {
   }
 
   const handleToggle = (index) => {
+    const newTodos = [...todos];
+    newTodos[index].checked = !newTodos[index].checked;
+    setTodos(newTodos);
 
     
   };
