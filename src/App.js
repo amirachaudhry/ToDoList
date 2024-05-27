@@ -30,11 +30,12 @@ const App = () => {
     
   };
   return (
-    <div>
+    <div id="main-section">
       <TodoList/>
       <input type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)}/>
       <button onClick={(handleTasks)}>Add</button>
 
+    <div id="todo-section">
       <ul>
         {todos.map((todos,index) => (
           <li key={index}>
@@ -43,10 +44,11 @@ const App = () => {
           <span>
             {todos.text}
           </span>
-          <button onClick={() => handleDelete(index)}>Delete</button>
+          <button onClick={() => handleDelete(index)}> Delete</button>
           </li>
         ))}
       </ul>
+      </div>
     </div>
   );
 };
